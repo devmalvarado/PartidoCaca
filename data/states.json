@@ -5,10 +5,7 @@
   { "name": "Campeche" },
   { "name": "Chiapas" },
   { "name": "Chihuahua" },
-  {
-    "name": "Ciudad de México",
-    "displayName": "Ciudad de México (Entidad federativa / Capital del país)"
-  },
+  { "name": "Ciudad de México" },
   { "name": "Coahuila de Zaragoza" },
   { "name": "Colima" },
   { "name": "Durango" },

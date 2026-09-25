@@ -20,7 +20,7 @@ assert.equal((await stat(new URL("../data/states.json", import.meta.url))).isFil
 assert.equal(states.length, 32);
 assert.equal(new Set(states.map((state) => state.name)).size, 32);
 assert.equal(stateLabels.includes("Quintana Roo"), true);
-assert.equal(stateLabels.includes("Ciudad de México (Entidad federativa / Capital del país)"), true);
+assert.equal(stateLabels.includes("Ciudad de México"), true);
 assert.equal(stateLabels.includes("México (Estado de México)"), true);
 assert.equal(stateLabels.at(0), "Aguascalientes");
 assert.equal(stateLabels.at(-1), "Zacatecas");
