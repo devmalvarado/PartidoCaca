@@ -311,6 +311,7 @@ footer span {
   border-radius: 6px;
   background: var(--white);
   box-shadow: 7px 7px 0 var(--ink);
+  min-width: 0;
 }
 
 .statePicker {
@@ -338,6 +339,7 @@ textarea {
 
 .stateCard h3 {
   font-size: clamp(2rem, 4vw, 3.4rem);
+  overflow-wrap: anywhere;
   text-transform: uppercase;
 }
 
