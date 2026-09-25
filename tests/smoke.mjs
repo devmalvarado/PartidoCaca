@@ -13,6 +13,7 @@ assert.match(html, /caca-mascot\.png/);
 assert.match(html, /id="registro"/);
 assert.match(html, /id="actividades"/);
 assert.match(css, /position: fixed/);
+assert.match(css, /font-size: clamp\(2rem, 2\.8vw, 2\.65rem\)/);
 assert.match(css, /overflow-wrap: anywhere/);
 assert.match(css, /@media \(max-width: 560px\)/);
 assert.equal((await stat(new URL("../assets/caca-mascot.png", import.meta.url))).isFile(), true);

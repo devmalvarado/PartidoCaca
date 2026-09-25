@@ -338,7 +338,9 @@ textarea {
 }
 
 .stateCard h3 {
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  max-width: 100%;
+  font-size: clamp(2rem, 2.8vw, 2.65rem);
+  line-height: 0.94;
   overflow-wrap: anywhere;
   text-transform: uppercase;
 }
