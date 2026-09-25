@@ -1,15 +1,4 @@
-export const states = [
-  "Aguascalientes",
-  "Baja California",
-  "Chiapas",
-  "Ciudad de México",
-  "Guanajuato",
-  "Jalisco",
-  "Nuevo León",
-  "Puebla",
-  "Quintana Roo",
-  "Yucatán",
-];
+export const STATE_CATALOG_URL = "./data/states.json";
 
 export const activities = [
   {
@@ -54,6 +43,16 @@ export const levels = [
 
 const ranks = ["Lola H.", "Rafa M.", "Jimena P.", "Toño C."];
 
+export async function loadStates(url = STATE_CATALOG_URL) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`No se pudo cargar el catálogo de estados: ${response.status}`);
+  return response.json();
+}
+
+export function stateLabel(state) {
+  return state.displayName || state.name;
+}
+
 function numberForState(state, base) {
   return [...state].reduce((sum, char) => sum + char.charCodeAt(0), base);
 }
@@ -67,8 +66,10 @@ export function statsForState(state) {
   };
 }
 
-function fillSelect(select) {
-  select.innerHTML = states.map((state) => `<option>${state}</option>`).join("");
+function fillSelect(select, states) {
+  select.innerHTML = states
+    .map((state) => `<option value="${state.name}">${stateLabel(state)}</option>`)
+    .join("");
 }
 
 function renderState(state) {
@@ -112,20 +113,21 @@ function renderLevels() {
     .join("");
 }
 
-export function init() {
-  const stateSelect = document.querySelector("#stateSelect");
-  const formState = document.querySelector("#formState");
-  fillSelect(stateSelect);
-  fillSelect(formState);
+export async function init() {
   renderActivities();
   renderLevels();
-  renderState(stateSelect.value);
+  const states = await loadStates();
+  const stateSelect = document.querySelector("#stateSelect");
+  const formState = document.querySelector("#formState");
+  fillSelect(stateSelect, states);
+  fillSelect(formState, states);
+  renderState(stateSelect.selectedOptions[0].textContent);
   stateSelect.addEventListener("change", () => {
     formState.value = stateSelect.value;
-    renderState(stateSelect.value);
+    renderState(stateSelect.selectedOptions[0].textContent);
   });
 }
 
 if (typeof document !== "undefined") {
-  init();
+  init().catch(console.error);
 }

@@ -1,9 +1,11 @@
 import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
-import { activities, levels, states, statsForState } from "../script.js";
+import { activities, levels, stateLabel, statsForState } from "../script.js";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const css = await readFile(new URL("../styles.css", import.meta.url), "utf8");
+const states = JSON.parse(await readFile(new URL("../data/states.json", import.meta.url), "utf8"));
+const stateLabels = states.map(stateLabel);
 
 assert.match(html, /Partido de la Caca/);
 assert.match(html, /assets\/favicon\.png/);
@@ -14,7 +16,14 @@ assert.match(css, /position: fixed/);
 assert.match(css, /@media \(max-width: 560px\)/);
 assert.equal((await stat(new URL("../assets/caca-mascot.png", import.meta.url))).isFile(), true);
 assert.equal((await stat(new URL("../assets/favicon.png", import.meta.url))).isFile(), true);
-assert.equal(states.includes("Quintana Roo"), true);
+assert.equal((await stat(new URL("../data/states.json", import.meta.url))).isFile(), true);
+assert.equal(states.length, 32);
+assert.equal(new Set(states.map((state) => state.name)).size, 32);
+assert.equal(stateLabels.includes("Quintana Roo"), true);
+assert.equal(stateLabels.includes("Ciudad de México (Entidad federativa / Capital del país)"), true);
+assert.equal(stateLabels.includes("México (Estado de México)"), true);
+assert.equal(stateLabels.at(0), "Aguascalientes");
+assert.equal(stateLabels.at(-1), "Zacatecas");
 assert.equal(activities.length, 6);
 assert.equal(levels.at(-1)[0], "Leyenda del cagadero");
 assert.equal(statsForState("Jalisco").volunteers > 0, true);
