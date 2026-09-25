@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Partido de la Caca</title>
+    <meta
+      name="description"
+      content="Partido satírico de protesta contra la corrupción, con registro por estado, agenda, actividades y puntos para voluntarios."
+    />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="apple-touch-icon" href="./assets/favicon.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="inicio">
+      <img class="heroImage" src="./assets/protest-wall.png" alt="" />
+      <div class="heroShade"></div>
+      <nav class="topbar" aria-label="Navegación principal">
+        <a class="brand" href="#inicio" aria-label="Partido de la Caca">
+          <span class="brandMark">PDC</span>
+          <span>
+            <strong>Partido de la Caca</strong>
+            <small>Protesta satírica organizada</small>
+          </span>
+        </a>
+        <div class="navLinks">
+          <a href="#estado">Tu estado</a>
+          <a href="#actividades">Actividades</a>
+          <a href="#puntos">Puntos</a>
+          <a href="#registro">Registro</a>
+        </div>
+      </nav>
+
+      <section class="heroContent">
+        <p class="eyebrow">Primer partido satírico en México</p>
+        <h1>La política ya huele mal. Organízate en tu estado.</h1>
+        <p>
+          Somos una mierda, igual que el resto. La diferencia es que nosotros no venimos
+          perfumados. Regístrate, toma una actividad concreta, sube evidencia y suma puntos
+          para señalar lo que apesta cerca de ti.
+        </p>
+        <div class="heroActions">
+          <a class="primaryButton" href="#registro">Registrarme en mi estado</a>
+          <a class="secondaryButton" href="#actividades">Ver actividades</a>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="serio" id="serio">
+        <div>
+          <p class="sectionLabel">Pero ya en serio</p>
+          <h2>La sátira es el empaque. El hartazgo es real.</h2>
+        </div>
+        <p>
+          El Partido de la Caca nace como protesta contra el enriquecimiento inexplicable,
+          el nepotismo, los contratos amañados, los aviadores, los favores entre cuates y
+          la compra descarada de voluntades. No somos izquierda, derecha ni centro: somos
+          el dedo señalando el olor.
+        </p>
+      </section>
+
+      <section class="statePanel section" id="estado">
+        <div class="sectionHead">
+          <p class="sectionLabel">El partido en tu estado</p>
+          <h2>Cada estado tiene su propio aroma político.</h2>
+          <p>
+            Elige tu estado para ver una muestra de voluntarios, actividades y puntos.
+            Esta primera versión simula el portal para validar el flujo.
+          </p>
+        </div>
+
+        <div class="stateGrid">
+          <label class="statePicker">
+            <span>Estado</span>
+            <select id="stateSelect" aria-label="Elegir estado"></select>
+          </label>
+          <article class="stateCard">
+            <p class="cardLabel">PDC en</p>
+            <h3 id="stateName">Aguascalientes</h3>
+            <dl>
+              <div>
+                <dt>Voluntarios</dt>
+                <dd id="volunteerCount">128</dd>
+              </div>
+              <div>
+                <dt>Actividades</dt>
+                <dd id="activityCount">9</dd>
+              </div>
+              <div>
+                <dt>Puntos</dt>
+                <dd id="statePoints">4,820</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="ranking">
+            <p class="cardLabel">Ranking local</p>
+            <ol id="rankingList"></ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="actividades">
+        <div class="sectionHead">
+          <p class="sectionLabel">Actividades concretas</p>
+          <h2>No puro mitin. Tareas con evidencia.</h2>
+          <p>
+            Las actividades deben poder registrarse, revisarse y contar. Nada de puntos
+            por aplaudir bonito.
+          </p>
+        </div>
+        <div class="activityGrid" id="activityGrid"></div>
+      </section>
+
+      <section class="agenda section" id="agenda">
+        <div class="sectionHead compact">
+          <p class="sectionLabel">Agenda</p>
+          <h2>Fechas, responsables y cupos.</h2>
+        </div>
+        <div class="agendaList">
+          <article>
+            <time datetime="2026-09-05">5 sep</time>
+            <div>
+              <h3>Brigada de carteles autorizados</h3>
+              <p>Centro histórico - 18 lugares</p>
+            </div>
+            <button>Me apunto</button>
+          </article>
+          <article>
+            <time datetime="2026-09-12">12 sep</time>
+            <div>
+              <h3>Reporte de obras infladas</h3>
+              <p>Municipios prioritarios - cupo abierto</p>
+            </div>
+            <button>Me apunto</button>
+          </article>
+          <article>
+            <time datetime="2026-09-20">20 sep</time>
+            <div>
+              <h3>Activación satírica estatal</h3>
+              <p>Plaza pública - 40 voluntarios</p>
+            </div>
+            <button>Me apunto</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="points section" id="puntos">
+        <div class="sectionHead">
+          <p class="sectionLabel">Sistema de puntos</p>
+          <h2>Puntos de Caca: reconocimiento, no favores.</h2>
+          <p>
+            Los puntos no compran candidaturas, poder ni trato preferente. Solo registran
+            participación verificable.
+          </p>
+        </div>
+        <div class="levels" id="levels"></div>
+      </section>
+
+      <section class="evidence section" id="evidencias">
+        <div>
+          <p class="sectionLabel">Evidencias</p>
+          <h2>Si no se puede revisar, no cuenta.</h2>
+          <ul>
+            <li>Foto o enlace de publicación.</li>
+            <li>Estado, municipio y fecha.</li>
+            <li>Comentario breve de la acción.</li>
+            <li>Revisión: pendiente, aprobada, rechazada o corregir.</li>
+          </ul>
+        </div>
+        <form class="evidenceMock" aria-label="Ejemplo de carga de evidencia">
+          <label>
+            Tipo de actividad
+            <select>
+              <option>Reporte ciudadano</option>
+              <option>Cartel autorizado</option>
+              <option>Contenido satírico</option>
+              <option>Asistencia a evento</option>
+            </select>
+          </label>
+          <label>
+            Evidencia
+            <input type="file" />
+          </label>
+          <label>
+            Comentario
+            <textarea rows="4" placeholder="Describe qué hiciste sin echar rollo."></textarea>
+          </label>
+          <button type="button">Subir evidencia</button>
+        </form>
+      </section>
+
+      <section class="registration" id="registro">
+        <form class="registerForm" aria-label="Registro de voluntario">
+          <div>
+            <p class="sectionLabel">Registro</p>
+            <h2>Entra al cagadero organizado.</h2>
+            <p>
+              Déjanos lo básico para ubicarte por estado y proponerte actividades reales.
+            </p>
+          </div>
+          <label>
+            Nombre
+            <input type="text" placeholder="Tu nombre" />
+          </label>
+          <label>
+            WhatsApp
+            <input type="tel" placeholder="10 dígitos" />
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="correo@ejemplo.com" />
+          </label>
+          <label>
+            Estado
+            <select id="formState" aria-label="Estado para registro"></select>
+          </label>
+          <label>
+            Municipio
+            <input type="text" placeholder="Tu municipio" />
+          </label>
+          <fieldset>
+            <legend>¿Cómo quieres ayudar?</legend>
+            <label><input type="checkbox" /> Pegar carteles autorizados</label>
+            <label><input type="checkbox" /> Levantar reportes ciudadanos</label>
+            <label><input type="checkbox" /> Crear contenido</label>
+            <label><input type="checkbox" /> Coordinar brigadas</label>
+          </fieldset>
+          <button type="button">Quiero participar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <strong>Partido de la Caca</strong>
+      <span>Nos burlamos porque ya nos cansamos de que se burlen de nosotros.</span>
+    </footer>
+
+    <section class="mascotFinal" aria-label="Mascota del Partido de la Caca">
+      <img
+        src="./assets/caca-mascot.png"
+        alt="Mascota ilustrada del Partido de la Caca con lentes oscuros"
+      />
+      <p>Si va a oler mal, que por lo menos sea honesto.</p>
+    </section>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

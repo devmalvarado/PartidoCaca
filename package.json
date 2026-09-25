@@ -1,0 +1,10 @@
+{
+  "name": "partido-caca-landing",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 4177",
+    "test": "node --test tests/smoke.mjs"
+  }
+}
