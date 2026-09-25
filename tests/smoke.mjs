@@ -22,6 +22,7 @@ assert.equal(new Set(states.map((state) => state.name)).size, 32);
 assert.equal(stateLabels.includes("Quintana Roo"), true);
 assert.equal(stateLabels.includes("Ciudad de México"), true);
 assert.equal(stateLabels.includes("Estado de México"), true);
+assert.equal(stateLabels.includes("Veracruz"), true);
 assert.equal(stateLabels.at(0), "Aguascalientes");
 assert.equal(stateLabels.at(-1), "Zacatecas");
 assert.equal(activities.length, 6);
